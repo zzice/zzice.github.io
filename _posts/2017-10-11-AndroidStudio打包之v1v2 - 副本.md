@@ -1,8 +1,7 @@
 ---
 title: Android Studio 打包时 Signature Version V1 V2
 date: 2017-08-13 23:10:01
-categories:
-- Android
+categories: 
 tags: Android_Studio
 ---
 
