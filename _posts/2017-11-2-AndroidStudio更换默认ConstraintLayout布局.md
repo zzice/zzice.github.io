@@ -8,9 +8,12 @@ tags: Android_Studio
 > Google目前大力推行ConstraintLayout布局，所以Android Studio新建工程的时候默认布局会变 成ConstraintLayout。
 >
 > ConstraintLayout使用教程
+> 
 > 郭霖 [Android新特性介绍，ConstraintLayout完全解析](http://blog.csdn.net/guolin_blog/article/details/53122387)
+> 
 > 鸿洋 [ConstraintLayout 完全解析 快来优化你的布局吧](http://blog.csdn.net/lmj623565791/article/details/78011599)
-> ......
+>
+>  ......
 
 此文仅介绍如何更换默认布局
 
