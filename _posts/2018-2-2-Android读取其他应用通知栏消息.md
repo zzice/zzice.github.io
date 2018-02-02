@@ -12,19 +12,31 @@ tags: Android
 #### NotificationListenerService主要方法(成员变量)： 
 
 cancelAllNotifications() ：删除系统中所有可被清除的通知； 
-cancelNotification(String pkg, String tag, int id) ：删除具体某一个通知； 
-getActiveNotifications() ：返回当前系统所有通知到StatusBarNotification[]数组； 
+
+cancelNotification(String pkg, String tag, int id) ：删除具体某一个通知；
+
+getActiveNotifications() ：返回当前系统所有通知到StatusBarNotification[]数组；
+
 onNotificationPosted(StatusBarNotification sbn) ：当系统收到新的通知后出发回调； 
+
 onNotificationRemoved(StatusBarNotification sbn) ：当系统通知被删掉后出发回调；
 
-StatusBarNotification主要方法(成员变量)： 
+#### StatusBarNotification主要方法(成员变量)： 
+
 getId()：返回通知对应的id； 
+
 getNotification()：返回通知对象； 
+
 getPackageName()：返回通知对应的包名； 
+
 getPostTime()：返回通知发起的时间； 
-getTag()：返回通知的Tag，如果没有设置返回null； 
-getUserId()：返回UserId，用于多用户场景； 
+
+getTag()：返回通知的Tag，如果没有设置返回null；
+
+getUserId()：返回UserId，用于多用户场景；
+
 isClearable()：返回该通知是否可被清楚，FLAG_ONGOING_EVENT、FLAG_NO_CLEAR； 
+
 isOngoing()：检查该通知的flag是否为FLAG_ONGOING_EVENT；
 
 #### Step 1. 新建通知消息监听类
