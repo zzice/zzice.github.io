@@ -5,9 +5,7 @@ categories:
 tags: Android
 ---
 
-> `NotificationListenerService`(API 21)，获取通知相关信息（通知的新增和删除，获取当前通知数量，通知内容信息）。
->
-> 这些信息可通过`NotificationListenerService`类及`StatusBarNotification`类对象获取。
+> `NotificationListenerService`(API 21)，获取通知相关信息（通知的新增和删除，获取当前通知数量，通知内容信息），这些信息可通过`NotificationListenerService`类及`StatusBarNotification`类对象获取。
 
 #### NotificationListenerService主要方法(成员变量)： 
 
