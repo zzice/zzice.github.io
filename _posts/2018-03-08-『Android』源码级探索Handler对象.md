@@ -5,15 +5,11 @@ categories:
 tags: Android
 ---
 
-![](http://zzice.github.io/resoures/images/handler.png)
+> A Handler allows you to send and process Message and Runnable objects associated with a thread's MessageQueue.  Each Handler instance is associated with a single thread and that thread's message queue.  When you create a new Handler, it is bound to the thread / message queue of the thread that is creating it -- from that point on, it will deliver messages and runnables to that message queue and execute them as they come out of the message queue.
 
 <!-- more -->
 
-图片来自`githubchen001`
-
-## Handler介绍
-
-> A Handler allows you to send and process Message and Runnable objects associated with a thread's MessageQueue.  Each Handler instance is associated with a single thread and that thread's message queue.  When you create a new Handler, it is bound to the thread / message queue of the thread that is creating it -- from that point on, it will deliver messages and runnables to that message queue and execute them as they come out of the message queue.
+## Handler
 
 Handler允许您发送和处理与线程的MessageQueue关联的Message和Runnable对象。每个Handler实例都与单个线程和该线程的消息队列相关联。当您创建一个新的Handler时，它将绑定到正在创建它的线程的线程/消息队列 -- 从那时起，它将消息(messages)和可运行消息(runnables)传递到该消息队列(message queue)，并在消息队列出来时执行它们。
 
@@ -299,6 +295,12 @@ Looper.loop();
 
 此时重写其handleMessage方法，可以处理发送过来的消息。
 
+Handler的原理如下图所示
+
+![](http://zzice.github.io/resoures/images/handler.png)
+
+图片引用自`http://githubchen001.github.io`
+
 ## Activity中的Looper
 
 我们在平时开发过程中，并没有在Activity中初始化Looper对象(Looper.prepare()和Looper.loop())，那为什么可以使用Handler呢?
@@ -364,4 +366,3 @@ public class MyActivity extends AppCompatActivity {
     }
 }
 ```
-
