@@ -10,9 +10,10 @@ tags: Android
 
 > A Handler allows you to send and process Message and Runnable objects associated with a thread's MessageQueue.  Each Handler instance is associated with a single thread and that thread's message queue.  When you create a new Handler, it is bound to the thread / message queue of the thread that is creating it -- from that point on, it will deliver messages and runnables to that message queue and execute them as they come out of the message queue.
 
+<!-- more -->
+
 Handler允许您发送和处理与线程的MessageQueue关联的Message和Runnable对象。每个Handler实例都与单个线程和该线程的消息队列相关联。当您创建一个新的Handler时，它将绑定到正在创建它的线程的线程/消息队列 -- 从那时起，它将消息(messages)和可运行消息(runnables)传递到该消息队列(message queue)，并在消息队列出来时执行它们。
 
-<!-- more -->
 
 > There are two main uses for a Handler: 
 > (1) to schedule messages and runnables to be executed as some point in the future; 
@@ -90,9 +91,9 @@ public Handler(Callback callback, boolean async) {
 
 ### handler.sendMessage()
 
-`mHandler.sendMessage(message);`将消息发送出去，此过程中经历了什么？
+mHandler.sendMessage(message);将消息发送出去，此过程中经历了什么？
 
-从源码处可看到执行了`sendMessageDelayed(msg, 0)`
+从源码处可看到执行了sendMessageDelayed(msg, 0)；
 
 ```java
 public final boolean sendMessage(Message msg){
@@ -100,7 +101,7 @@ public final boolean sendMessage(Message msg){
 }
 ```
 
-在`sendMessageDelayed`方法中执行`sendMessageAtTime`
+在sendMessageDelayed方法中执行sendMessageAtTime
 
 ```java
 public final boolean sendMessageDelayed(Message msg, long delayMillis){
@@ -111,7 +112,7 @@ public final boolean sendMessageDelayed(Message msg, long delayMillis){
 }
 ```
 
-在`sendMessageAtTime`中执行`enqueueMessage`方法传递`MessageQueue`，`Message`及`运行时间`uptimeMillis
+在sendMessageAtTime中执行enqueueMessage方法传递MessageQueue，Message及运行时间uptimeMillis
 
 ``` java
 public boolean sendMessageAtTime(Message msg, long uptimeMillis) {
@@ -126,7 +127,7 @@ public boolean sendMessageAtTime(Message msg, long uptimeMillis) {
 }
 ```
 
-`enqueueMessage`中`msg.target = this`，这个this指的就是Handler对象，意思是指这个Message中的target属性是当前这个Handler对象，之后调用`MessageQueue`的`enqueueMessage`方法。
+enqueueMessage中msg.target = this，这个this指的就是Handler对象，意思是指这个Message中的target属性是当前这个Handler对象，之后调用MessageQueue的enqueueMessage方法。
 
 ```java
 private boolean enqueueMessage(MessageQueue queue, Message msg, long uptimeMillis) {
@@ -138,7 +139,7 @@ private boolean enqueueMessage(MessageQueue queue, Message msg, long uptimeMilli
 }
 ```
 
-`enqueueMessage()`此方法将Message插入到MessageQueue中。
+enqueueMessage()此方法将Message插入到MessageQueue中。
 
 `MessageQueue.java`
 
@@ -200,7 +201,7 @@ boolean enqueueMessage(Message msg, long when) {
 
 ### Looper
 
-1.`Looper.prepare();`创建Looper对象并初始化消息队列
+1.Looper.prepare();创建Looper对象并初始化消息队列
 
 ```java
 public static void prepare() {
@@ -226,7 +227,7 @@ private Looper(boolean quitAllowed) {
 
 已经有了消息队列，也了解到sendMessage是将消息插入到消息队列中，那如何管理MessageQueue中的消息呢，这时候就需要依靠Looper.loop()方法了。
 
-2.`Looper.loop();`轮询获取消息并分发
+2.Looper.loop();轮询获取消息并分发
 
 ```java
 public static void loop() {
