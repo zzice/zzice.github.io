@@ -4,15 +4,15 @@ date: 2018-3-8 14:03:00
 categories: 
 tags: Android
 ---
-
-> A Handler allows you to send and process Message and Runnable objects associated with a thread's MessageQueue.  Each Handler instance is associated with a single thread and that thread's message queue.  When you create a new Handler, it is bound to the thread / message queue of the thread that is creating it -- from that point on, it will deliver messages and runnables to that message queue and execute them as they come out of the message queue.
+![](http://zzice.github.io/resoures/images/handler.png)
 
 <!-- more -->
 
 ## Handler
 
-Handler允许您发送和处理与线程的MessageQueue关联的Message和Runnable对象。每个Handler实例都与单个线程和该线程的消息队列相关联。当您创建一个新的Handler时，它将绑定到正在创建它的线程的线程/消息队列 -- 从那时起，它将消息(messages)和可运行消息(runnables)传递到该消息队列(message queue)，并在消息队列出来时执行它们。
+> A Handler allows you to send and process Message and Runnable objects associated with a thread's MessageQueue.  Each Handler instance is associated with a single thread and that thread's message queue.  When you create a new Handler, it is bound to the thread / message queue of the thread that is creating it -- from that point on, it will deliver messages and runnables to that message queue and execute them as they come out of the message queue.
 
+Handler允许您发送和处理与线程的MessageQueue关联的Message和Runnable对象。每个Handler实例都与单个线程和该线程的消息队列相关联。当您创建一个新的Handler时，它将绑定到正在创建它的线程的线程/消息队列 -- 从那时起，它将消息(messages)和可运行消息(runnables)传递到该消息队列(message queue)，并在消息队列出来时执行它们。
 
 > There are two main uses for a Handler: 
 > (1) to schedule messages and runnables to be executed as some point in the future; 
